@@ -1,0 +1,28 @@
+﻿@model MyPortfolio.Models.TblExpertis
+@{
+    ViewBag.Title = "Uzmanlık Alanı Ekle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Yeni Uzmanlık Alanı Ekle</h2>
+
+<form method="post">
+    <label>Uzmanlık Alanı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "C#, JavaScript, Web Tasarım..." })
+    <br />
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Expertise/Index" class="btn btn-secondary">İptal</a>
+</form>
+
+<div class="mt-4">
+    <h5>Örnek Uzmanlık Alanları:</h5>
+    <ul>
+        <li>C# Programming</li>
+        <li>ASP.NET MVC</li>
+        <li>JavaScript</li>
+        <li>Web Design</li>
+        <li>SQL Server</li>
+        <li>HTML/CSS</li>
+    </ul>
+</div>

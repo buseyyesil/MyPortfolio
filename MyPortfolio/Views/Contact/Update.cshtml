@@ -1,0 +1,22 @@
+﻿@model MyPortfolio.Models.TblContact
+@{
+    ViewBag.Title = "İletişim Bilgisi Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>İletişim Bilgisi Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ContactId)
+
+    <label>Telefon</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "0555 123 45 67" })
+    <br />
+
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @type = "email", @placeholder = "ornek@email.com" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/Contact/Index" class="btn btn-secondary">İptal</a>
+</form>

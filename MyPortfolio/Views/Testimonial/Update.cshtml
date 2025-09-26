@@ -1,0 +1,31 @@
+﻿
+@model MyPortfolio.Models.TblTestimonial
+@{
+    ViewBag.Title = "Referans Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Referans Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.TestimonialId)
+
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+
+    <label>Unvan</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+
+    <label>Yorum</label>
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control", @rows = "4" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/Testimonial/Index" class="btn btn-secondary">İptal</a>
+</form>

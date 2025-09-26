@@ -1,0 +1,9 @@
+﻿@model List<MyPortfolio.Models.TblContact>
+
+@foreach (var item in Model)
+{
+    <p class="contact-links">
+        <a href="mailto:@item.Email" class="mailtoui">@item.Email</a> <br>
+        <a href="tel:@item.Phone">@item.Phone</a>
+    </p>
+}

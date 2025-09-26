@@ -1,0 +1,70 @@
+﻿@model List<MyPortfolio.Models.TblExperience>
+@{
+    ViewBag.Title = "Deneyimler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>İş Deneyimlerim</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Şirket</th>
+        <th>Pozisyon</th>
+        <th>Başlangıç</th>
+        <th>Bitiş</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @{int count = 0;}
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.CompanyName</td>
+            <td>@item.Title</td>
+            <td>
+           
+                @if (item.StarDate.HasValue)
+                {
+                    @item.StarDate.Value.ToShortDateString()
+                }
+                else
+                {
+                    <span class="text-muted">Tarih Yok</span>
+                }
+            </td>
+            <td>
+                @if (item.EndDate.HasValue)
+                {
+                    @item.EndDate.Value.ToShortDateString()
+                }
+                else
+                {
+                    <span class="text-success">Devam Ediyor</span>
+                }
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Description) && item.Description.Length > 50)
+                {
+                    @item.Description.Substring(0, 50)@:...
+                }
+                else
+                {
+                    @item.Description
+                }
+            </td>
+            <td>
+                <a href="/Experience/Update/@item.ExperienceId" class="btn btn-outline-warning btn-sm">Düzenle</a>
+                <a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-outline-danger btn-sm"
+                   onclick="return confirm('Bu deneyimi silmek istediğinizden emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<a href="/Experience/Create" class="btn btn-primary">Yeni Deneyim Ekle</a>

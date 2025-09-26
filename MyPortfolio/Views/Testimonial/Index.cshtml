@@ -1,0 +1,35 @@
+﻿@model List<MyPortfolio.Models.TblTestimonial>
+@{
+    ViewBag.Title = "Referanslar";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Müşteri Yorumları</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>Unvan</th>
+        <th>Yorum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @{int count = 0;}
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.NameSurname</td>
+            <td>@item.Title</td>
+            <td>@(item.Comment.Length > 50 ? item.Comment.Substring(0, 50) + "..." : item.Comment)</td>
+            <td><a href="/Testimonial/Delete/@item.TestimonialId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Testimonial/Update/@item.TestimonialId" class="btn btn-outline-info">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Testimonial/Create" class="btn btn-primary">Yeni Referans Ekle</a>

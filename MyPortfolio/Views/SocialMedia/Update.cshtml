@@ -1,0 +1,22 @@
+﻿@model MyPortfolio.Models.TblSocialMedia
+@{
+    ViewBag.Title = "Sosyal Medya Hesabı Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Sosyal Medya Hesabı Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SocialMediaId)
+
+    <label>Platform Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <label>URL</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/SocialMedia/Index" class="btn btn-secondary">İptal</a>
+</form>

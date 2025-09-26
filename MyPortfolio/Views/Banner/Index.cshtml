@@ -1,0 +1,64 @@
+﻿@model List<MyPortfolio.Models.TblBanner>
+@{
+    ViewBag.Title = "Banner Yönetimi";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Ana Sayfa Banner'ları</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Gösterim Durumu</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @{int count = 0;}
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Title</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Description) && item.Description.Length > 50)
+                {
+                    @item.Description.Substring(0, 50)@:...
+                }
+                else
+                {
+                    @item.Description
+                }
+            </td>
+            <td>
+                @if (item.IsShown == true)
+                {
+                    <span class="badge bg-success">Aktif</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Pasif</span>
+                }
+            </td>
+            <td>
+                <a href="/Banner/Update/@item.BannerId" class="btn btn-outline-warning btn-sm">Düzenle</a>
+                <a href="/Banner/Delete/@item.BannerId" class="btn btn-outline-danger btn-sm"
+                   onclick="return confirm('Bu banner\'ı silmek istediğinizden emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        <p>Henüz banner eklenmemiş.</p>
+        <p><small>Ana sayfada görünecek banner metinlerini ekleyebilirsiniz.</small></p>
+    </div>
+}
+
+<br />
+<a href="/Banner/Create" class="btn btn-primary">Yeni Banner Ekle</a>

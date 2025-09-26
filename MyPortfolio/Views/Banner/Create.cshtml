@@ -1,0 +1,27 @@
+﻿@model MyPortfolio.Models.TblBanner
+@{
+    ViewBag.Title = "Banner Ekle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Yeni Banner Ekle</h2>
+
+<form method="post">
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Merhaba, ben Buse..." })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "4", @placeholder = "Web developer ve tasarımcı..." })
+    <br />
+
+    <label>Gösterim Durumu</label>
+    <select name="IsShown" class="form-control">
+        <option value="true">Aktif (Gösterilsin)</option>
+        <option value="false">Pasif (Gösterilmesin)</option>
+    </select>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Banner/Index" class="btn btn-secondary">İptal</a>
+</form>

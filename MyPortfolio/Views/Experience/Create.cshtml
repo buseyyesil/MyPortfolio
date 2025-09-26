@@ -1,0 +1,32 @@
+﻿@model MyPortfolio.Models.TblExperience
+@{
+    ViewBag.Title = "Yeni Deneyim Ekle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Yeni İş Deneyimi Ekle</h2>
+
+<form method="post">
+    <label>Şirket Adı</label>
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+
+    <label>Pozisyon</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "4" })
+    <br />
+
+    <label>Başlama Tarihi</label>
+    <input type="date" name="StarDate" class="form-control" />
+    <br />
+
+    <label>Bitiş Tarihi <small class="text-muted">(Devam ediyorsa boş bırakın)</small></label>
+    <input type="date" name="EndDate" class="form-control" />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a href="/Experience/Index" class="btn btn-secondary">İptal</a>
+</form>

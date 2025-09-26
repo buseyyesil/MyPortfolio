@@ -1,0 +1,62 @@
+﻿
+@model List<MyPortfolio.Models.TblContact>
+@{
+    ViewBag.Title = "İletişim Bilgileri";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>İletişim Bilgileri</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @{int count = 0;}
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Phone))
+                {
+                    <a href="tel:@item.Phone">@item.Phone</a>
+                }
+                else
+                {
+                    <span class="text-muted">Telefon Yok</span>
+                }
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Email))
+                {
+                    <a href="mailto:@item.Email">@item.Email</a>
+                }
+                else
+                {
+                    <span class="text-muted">Email Yok</span>
+                }
+            </td>
+            <td>
+                <a href="/Contact/Update/@item.ContactId" class="btn btn-outline-warning btn-sm">Düzenle</a>
+                <a href="/Contact/Delete/@item.ContactId" class="btn btn-outline-danger btn-sm"
+                   onclick="return confirm('Bu iletişim bilgisini silmek istediğinizden emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        <p>Henüz iletişim bilgisi bulunmuyor.</p>
+    </div>
+}
+
+<br />
+<a href="/Contact/Create" class="btn btn-primary">Yeni İletişim Bilgisi Ekle</a>

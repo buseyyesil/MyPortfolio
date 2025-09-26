@@ -1,0 +1,18 @@
+﻿@model MyPortfolio.Models.TblExpertis
+@{
+    ViewBag.Title = "Uzmanlık Alanı Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Uzmanlık Alanı Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.ExpertiseId)
+
+    <label>Uzmanlık Alanı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "C#, JavaScript, Web Tasarım..." })
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/Expertise/Index" class="btn btn-secondary">İptal</a>
+</form>

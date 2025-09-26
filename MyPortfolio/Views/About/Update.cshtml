@@ -1,0 +1,55 @@
+﻿@model MyPortfolio.Models.TblAbout
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>About Bilgisi Güncelle</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.AboutId)
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "4" })
+    <br />
+
+    <div class="row">
+        <div class="col-md-6">
+            <label>Profil Resmi</label>
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <br />
+                <img src="@Model.ImageUrl" style="width: 150px; height: 150px; object-fit: cover;" class="img-thumbnail" />
+                <p class="text-muted">Mevcut resim</p>
+            }
+            <input type="file" name="ImageFile" class="form-control" accept="image/*" />
+            <small class="text-muted">Yeni resim seçerseniz eskisi değişecek</small>
+        </div>
+
+        <div class="col-md-6">
+            <label>CV Dosyası</label>
+            @if (!string.IsNullOrEmpty(Model.CvUrl))
+            {
+                <br />
+                <a href="@Model.CvUrl" target="_blank" class="btn btn-outline-info btn-sm mb-2">
+                    <i class="fa fa-download"></i> Mevcut CV'yi Görüntüle
+                </a>
+                <br />
+            }
+            <input type="file" name="CvFile" class="form-control" accept=".pdf,.doc,.docx" />
+            <small class="text-muted">Yeni CV seçerseniz eskisi değişecek</small>
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success">
+        <i class="fa fa-save"></i> Güncelle
+    </button>
+    <a href="/About/Index" class="btn btn-secondary">
+        <i class="fa fa-arrow-left"></i> Geri Dön
+    </a>
+</form>

@@ -1,0 +1,46 @@
+﻿@model List<MyPortfolio.Models.TblAbout>
+<section id="about" class="s-about target-section">
+    @foreach (var about in Model)//item yazmak zorunda değiliz o değişken adı about yazdık bu sefer
+    {
+
+        <div class="row about-info wide" data-animate-block>
+
+            <div class="column lg-6 md-12 about-info__pic-block">
+                <img src="@about.ImageUrl"
+          
+                     srcset="@about.ImageUrl 1x, @about.ImageUrl 2x" alt="" class="about-info__pic" data-animate-el>
+            </div>
+
+            <div class="column lg-6 md-12">
+                <div class="about-info__text">
+
+                    <h2 class="text-pretitle with-line" data-animate-el>
+                        @about.Title
+                    </h2>
+                    <p class="attention-getter" data-animate-el>
+                        @about.Description
+                    </p>
+                    <a href="@about.CvUrl" class="btn btn--medium u-fullwidth" data-animate-el>CV İndir</a>
+
+                </div>
+            </div>
+        </div> <!-- about-info -->
+    }
+
+
+
+    @Html.Action("DefaultExpertise")
+
+
+
+
+    <div class="row about-timelines" data-animate-block>
+
+        @Html.Action("DefaultExperience")
+
+        @Html.Action("DefaultEducation")
+
+
+    </div> <!-- end about-timelines -->
+
+</section> <!-- end s-about -->

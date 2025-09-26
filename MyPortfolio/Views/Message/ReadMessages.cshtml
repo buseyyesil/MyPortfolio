@@ -1,0 +1,47 @@
+﻿@model List<MyPortfolio.Models.TblMessage>
+@{
+    ViewBag.Title = "Okunan Mesajlar";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Okunan Mesajlar</h2>
+    <a href="/Message/Index" class="btn btn-primary">Gelen Mesajlar</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Gönderen Ad Soyad</th>
+            <th>Email</th>
+            <th>Konu</th>
+            <th>Durum</th>
+            <th>Sil</th>
+            <th>Mesajı Aç</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td><span class="badge bg-success">Okundu</span></td>
+                <td><a href="/Message/Delete/@item.MessageId" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-outline-info">Mesajı Aç</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        <p>Henüz okunmuş mesaj bulunmuyor.</p>
+    </div>
+}

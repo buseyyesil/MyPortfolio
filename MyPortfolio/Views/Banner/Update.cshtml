@@ -1,0 +1,29 @@
+﻿@model MyPortfolio.Models.TblBanner
+@{
+    ViewBag.Title = "Banner Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Banner Güncelle</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.BannerId)
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Merhaba, ben Buse..." })
+    <br />
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "4", @placeholder = "Web developer ve tasarımcı..." })
+    <br />
+
+    <label>Gösterim Durumu</label>
+    <select name="IsShown" class="form-control">
+        <option value="true" @(Model.IsShown == true ? "selected" : "")>Aktif (Gösterilsin)</option>
+        <option value="false" @(Model.IsShown == false ? "selected" : "")>Pasif (Gösterilmesin)</option>
+    </select>
+    <br />
+
+    <button type="submit" class="btn btn-success">Güncelle</button>
+    <a href="/Banner/Index" class="btn btn-secondary">İptal</a>
+</form>

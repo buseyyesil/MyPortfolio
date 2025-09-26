@@ -1,0 +1,42 @@
+﻿@model List<MyPortfolio.Models.TblExpertis>
+@{
+    ViewBag.Title = "Uzmanlık Alanları";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<h2>Uzmanlık Alanlarım</h2>
+<br />
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Uzmanlık Alanı</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @{int count = 0;}
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Title</td>
+            <td>
+                <a href="/Expertise/Update/@item.ExpertiseId" class="btn btn-outline-warning btn-sm">Düzenle</a>
+                <a href="/Expertise/Delete/@item.ExpertiseId" class="btn btn-outline-danger btn-sm"
+                   onclick="return confirm('Bu uzmanlık alanını silmek istediğinizden emin misiniz?')">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">
+        <p>Henüz uzmanlık alanı eklenmemiş.</p>
+        <p><small>C#, JavaScript, Python, Web Design gibi yeteneklerinizi ekleyebilirsiniz.</small></p>
+    </div>
+}
+
+<br />
+<a href="/Expertise/Create" class="btn btn-primary">Yeni Uzmanlık Alanı Ekle</a>

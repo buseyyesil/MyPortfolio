@@ -1,9 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortfolio", "MyPortfolio\MyPortfolio.csproj", "{E891721A-5F5A-41C4-ABDD-41764BD52BBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{05AF6269-9486-4B11-B7A6-F30CD91655DE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "screenshots", "screenshots", "{E061B732-5568-4317-B2A5-7579494B350F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Masaüstü\portfolyo\about.png = ..\..\..\OneDrive\Masaüstü\portfolyo\about.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\about2.png = ..\..\..\OneDrive\Masaüstü\portfolyo\about2.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\about3.png = ..\..\..\OneDrive\Masaüstü\portfolyo\about3.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\about4.png = ..\..\..\OneDrive\Masaüstü\portfolyo\about4.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\about5.png = ..\..\..\OneDrive\Masaüstü\portfolyo\about5.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\admin.png = ..\..\..\OneDrive\Masaüstü\portfolyo\admin.png
+		..\..\..\OneDrive\Masaüstü\portfolyo\login.png = ..\..\..\OneDrive\Masaüstü\portfolyo\login.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

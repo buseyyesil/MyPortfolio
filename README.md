@@ -10,43 +10,42 @@
 
 ![Admin Login](screenshots/login.png)
 
-*Güvenli Forms Authentication ile admin girişi*
 
 ### 📊 Admin Paneli 
 
 ![Admin About](screenshots/admin.png)
 
-*Profil bilgileri, CV ve resim yükleme özellikleri*
+
 
 ### 🏠 Ana Sayfa - Banner Bölümü
 
 ![Homepage Banner](screenshots/about.png)
 
-*"Merhaba, ben Buse. Bu kişisel portföyümde yazılım serüvenime göz atabilirsiniz."*
+
 
 ### 👤 Hakkımda Bölümü
 
 ![About Section](screenshots/about2.png)
 
-*Profil resmi, kişisel bilgiler ve CV indirme butonu*
+
 
 ### 💼 Deneyimler ve Eğitim Hayatı
 
 ![Experience & Education](screenshots/about3.png)
 
-*İş deneyimleri ve eğitim geçmişi timeline görünümü*
+
 
 ### 🚀 Projeler Galerisi
 
 ![Projects](screenshots/about4.png)
 
-*Kategori bazlı proje gösterimi ve detay modalleri*
+
 
 ### 📧 İletişim Bölümü
 
 ![Contact](screenshots/about5.png)
 
-*Mesaj gönderme formu ve iletişim bilgileri*
+
 
 
 

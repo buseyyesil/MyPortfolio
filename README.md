@@ -1,6 +1,6 @@
 ﻿# 💼 MyPortfolio - Kişisel Portfolyo Web Sitesi
 
-**ASP.NET MVC ile geliştirilmiş, profesyonel ve modern kişisel portfolyo yönetim sistemi. Yazılım geliştiriciler için kapsamlı CV sitesi ve admin paneli.**
+
 
 ---
 
@@ -283,52 +283,3 @@
 
 
 
-
-## 📞 İletişim 
-
-### 👨‍💻 Proje Sahibi: Buse Yeşil
-
-- 📧 **Email:** buseyesil55@gmail.com
-- 💼 **LinkedIn:** [linkedin.com/in/buse-yesil](https://www.linkedin.com/in/buse-y-5b3073249/)
-
-
-
-### 📦 Kullanılan Şablonlar
-- **[DarkPan](https://themewagon.com/themes/darkpan/)** by HTML Codex - Admin Panel Template
-- **[Luther](https://www.styleshout.com/)** by StyleShout - Portfolio Template
-
-### 🛠️ Teknoloji ve Kütüphaneler
-- **[ASP.NET MVC](https://dotnet.microsoft.com/apps/aspnet/mvc)** by Microsoft
-- **[Entity Framework](https://docs.microsoft.com/ef/)** by Microsoft
-- **[Bootstrap](https://getbootstrap.com/)** by Twitter
-- **[jQuery](https://jquery.com/)** by JS Foundation
-- **[Font Awesome](https://fontawesome.com/)** by Fonticons
-- **[Google Fonts](https://fonts.google.com/)** by Google
-
-
----
-
-
-
-
-### 🎓 Öğrenme Çıkarımları
-Bu proje ile:
-- ASP.NET MVC pattern'ini öğrendim
-- Entity Framework Database First yaklaşımını uyguladım
-- Forms Authentication ve Session yönetimini kavradım
-- CRUD işlemlerini gerçekleştirdim
-- Dosya yükleme işlemlerini hallettim
-- Partial View ve Layout kullanımını öğrendim
-
----
-
-## 🎉 Sonuç
-
-**MyPortfolio**, modern web geliştirme teknikleriyle oluşturulmuş, kullanıcı dostu ve yönetilebilir bir kişisel portfolyo web sitesidir. Yazılım geliştiricilerin kendilerini profesyonel bir şekilde tanıtmaları için ideal bir platformdur.
-
----
-
-
-🚀 **Mutlu kodlamalar!**
-
----
